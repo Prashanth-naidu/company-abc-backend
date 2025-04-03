@@ -5,7 +5,8 @@
   "scripts": {
     "start": "concurrently \"cd backend && mvn spring-boot:run\" \"cd frontend && npm start\"",
     "install-all": "npm install && cd frontend && npm install",
-    "build": "cd frontend && npm run build && cd ../backend && mvn clean package"
+    "build": "cd backend && mvn clean package -DskipTests",
+    "build:all": "cd frontend && npm run build && cd ../backend && mvn clean package"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
