@@ -1,0 +1,13 @@
+{
+  "name": "company-abc-website",
+  "version": "1.0.0",
+  "description": "Company ABC Website with CMS",
+  "scripts": {
+    "start": "concurrently \"cd backend && mvn spring-boot:run\" \"cd frontend && npm start\"",
+    "install-all": "npm install && cd frontend && npm install",
+    "build": "cd frontend && npm run build && cd ../backend && mvn clean package"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+} 
