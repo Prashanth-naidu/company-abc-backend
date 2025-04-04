@@ -1,0 +1,13 @@
+[build]
+builder = "nixpacks"
+buildCommand = "mvn clean package -DskipTests"
+
+[deploy]
+startCommand = "java -jar target/company-abc-backend-0.0.1-SNAPSHOT.jar"
+healthcheckPath = "/api/headings"
+healthcheckTimeout = 100
+restartPolicyType = "on-failure"
+restartPolicyMaxRetries = 10
+
+[deploy.env]
+JAVA_TOOL_OPTIONS = "-Xmx512m -Xms256m" 
